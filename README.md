@@ -40,7 +40,7 @@ Pela ideia e apoio durante todo o projeto
 ## Tecnologias que serão Utilizadas 🛠️
   Java
   
-  Swing e/ ou JavaFX (para a interface gráfica)
+ HTML & CSS (FRONT-END)
   
   MySQL (para o armazenamento de dados)
 
