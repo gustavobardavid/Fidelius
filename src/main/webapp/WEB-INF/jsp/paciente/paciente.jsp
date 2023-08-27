@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
+<%@taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -216,6 +218,7 @@
             <div class="col-12">
 
               <!-- Inicio do Card -->
+                         
               <div class="card shadow mb-4 card-novaaposta mx-auto">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary text-center">Cadastre um novo Paciente</h6>
@@ -227,11 +230,6 @@
 
                       
                         
-                          <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Nome">
-                            <input type="text" class="form-control" placeholder="Comorbidade">
-                        
-                          </div>
 
                     </div>
 
@@ -247,14 +245,30 @@
 
                 </div>
                 <div class="card-footer text-center">
-                  <a href="resultado.html" class="btn btn-primary btn-icon-split btn-lg mt-3 mb-3">
+                
+                <form method="post" action="<c:url value='paciente/cadastrarpaciente'/>">
+                   
+                       <div class="input-group">
+                       
+                            <input name="paciente.nome" type="text" class="form-control" placeholder="Nome">
+                            	
+                            <input name="paciente.comorbidade" type="text" class="form-control" placeholder="Comorbidade">
+                        
+                       </div>
+                  <button type="submit" class="btn btn-primary btn-icon-split btn-lg mt-3 mb-3">
+                    
                     <span class="icon text-white-50">
                       <i class="fas fa-check"></i>
                     </span>
+                   
                     <span class="text">Salvar</span>
-                  </a>
+                   
+                  </button>
+                </form>
+                  
                 </div>
               </div>
+              
               <!-- / Fim do Card-->
 
             </div>
