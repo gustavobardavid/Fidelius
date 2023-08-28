@@ -52,7 +52,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="<c:url value="dashboard"/>">
     
           <span>RelatÃ³rio</span></a>
       </li>
@@ -66,8 +66,15 @@
       </div>
 
       <!-- Nav Item - Charts -->
+       <li class="nav-item">
+        <a class="nav-link" href="<c:url value="cadastrarPaciente"/>">
+          
+		<i class="fas fa-plus"></i>
+        
+          <span>Cadastrar Novo Paciente</span></a>
+      </li>
       <li class="nav-item">
-        <a class="nav-link" href="novopaciente.html">
+        <a class="nav-link" href="<c:url value="cadastrarPaciente"/>">
           <i class="fas fa-user"></i>
 
           <span>Pacientes</span></a>
