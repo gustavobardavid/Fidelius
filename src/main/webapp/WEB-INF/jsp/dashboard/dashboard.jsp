@@ -70,24 +70,13 @@
           <span>Cadastrar Novo Paciente</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<c:url value="cadastrarPaciente"/>">
+        <a class="nav-link" href="<c:url value="pacientes"/>">
           <i class="fas fa-user"></i>
 
           <span>Pacientes</span></a>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="exames.html">
-          <i class="fas fa-pills"></i>
-          <span>DiagnÃ³sticos</span></a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="exames.html">
-          <i class="fas fa-calendar-alt"></i>
-
-          <span>Exames</span></a>
-      </li>
+    
     </ul>
     <!-- End of Sidebar -->
 
