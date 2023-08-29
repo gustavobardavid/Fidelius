@@ -44,7 +44,7 @@
           <i class="fas fa-heart"></i>
 
         </div>
-        <div class="sidebar-brand-text mx-3">Semiologia</div>
+        <div class="sidebar-brand-text mx-3">Fidelius</div>
       </a>
 
       <!-- Divider -->
@@ -183,7 +183,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Gisele Rocha</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Giselle Rocha</span>
                 <img class="img-profile rounded-circle" src="img/giselle.png">
               </a>
               <!-- Dropdown - User Information -->
@@ -219,27 +219,20 @@
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary text-center">Cadastre um novo Paciente</h6>
                 </div>
+                
                 <div class="card-body">
 
-                  <div class="row">
-                    <div class="col-md-6 d-flex align-items-center justify-content-center">
+                  
 
+                    
                       
-                        
-
-                    </div>
-
-                    <div class="col-md-6">
-                      <img class="imagem-novaaposta img-fluid" alt="Paciente"
-                        src="img/medica-sorridente-na-vista-frontal-da-clinica.jpg">
-                    </div>
-                  </div>
+                 
+                  
 
 
 
 
 
-                </div>
                 <div class="card-footer text-center">
                 
                 <form method="post" action="<c:url value='paciente/cadastrarpaciente'/>">
@@ -249,6 +242,14 @@
                             <input name="paciente.nome" type="text" class="form-control" placeholder="Nome">
                             	
                             <input name="paciente.comorbidade" type="text" class="form-control" placeholder="Comorbidade">
+                        
+                       </div>
+                       <hr>
+                         <div class="input-group">
+                       
+                            <input name="paciente.nome" type="text" class="form-control" placeholder="Data de Nascimento">
+                            	
+                            <input name="paciente.comorbidade" type="text" class="form-control" placeholder="">
                         
                        </div>
                   <button type="submit" class="btn btn-primary btn-icon-split btn-lg mt-3 mb-3">
@@ -262,6 +263,7 @@
                   </button>
                 </form>
                   
+                </div>
                 </div>
               </div>
               
@@ -303,15 +305,15 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Deseja sair?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">Ã</span>
+            <span aria-hidden="true"></span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">Certifique-se de salvar suas alterações</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+          <a class="btn btn-primary" href="login.html">Sair</a>
         </div>
       </div>
     </div>

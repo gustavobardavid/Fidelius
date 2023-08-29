@@ -14,7 +14,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Semiologia - Dashboard</title>
+  <title>Fidelius - Dashboard</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -40,7 +40,7 @@
           <i class="fas fa-heart"></i>
 
         </div>
-        <div class="sidebar-brand-text mx-3">Semiologia</div>
+        <div class="sidebar-brand-text mx-3">Fidelius</div>
       </a>
 
       <!-- Divider -->
@@ -179,7 +179,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Gisele Rocha</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Giselle Rocha</span>
                 <img class="img-profile rounded-circle" src="img/giselle.png">
               </a>
               <!-- Dropdown - User Information -->
