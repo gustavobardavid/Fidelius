@@ -13,7 +13,22 @@ public class Paciente {
 	private Integer id;
 	private String nome;
 	private String comorbidade;
+	private String dataNascimento;
+	private String Preocupa;
 	
+	
+	public String getDataNascimento() {
+		return dataNascimento;
+	}
+	public void setDataNascimento(String dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+	public String getPreocupa() {
+		return Preocupa;
+	}
+	public void setPreocupa(String preocupa) {
+		Preocupa = preocupa;
+	}
 	public String getNome() {
 		return nome;
 	}

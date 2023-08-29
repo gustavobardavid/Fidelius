@@ -397,7 +397,7 @@
 
                 <div class="card-footer text-center">
                 
-                <form method="post" action="<c:url value='paciente/cadastrarpaciente'/>">
+                <form method="post" action="<c:url value='situacao/salvarplano'/>">
                    
                            <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -417,14 +417,14 @@
                      
                       <td> <div class="input-group">
                       
-                            <input name="paciente.nome" type="text" class="form-control" placeholder="Descrição">
+                            <input name="plano.objetivo" type="text" class="form-control" placeholder="Descrição">
                          
                        </div>
                        </td>
                        
                       <td><div class="input-group">
                       		
-                      		<input name="paciente.nome" type="datetime-local" class="form-control" placeholder="Data">
+                      		<input name="plano.dataInicio" type="datetime-local" class="form-control" placeholder="Data">
                            
                          
                        </div>
@@ -433,7 +433,7 @@
                       <td>
                       <div class="input-group">
                       
-                            <input name="paciente.nome" type="Text" class="form-control" placeholder="">
+                            <input name="plano.prioridade" type="Text" class="form-control" placeholder="">
                          
                        </div>
                        </td>
@@ -441,7 +441,7 @@
                       <td>
                       <div class="input-group">
                       
-                          <input name="paciente.nome" type="checkbox" class="form-control" placeholder="Nome">
+                          <input name="plano.alcançado" type="checkbox" class="form-control" placeholder="Nome">
                          
                        </div>
                        </td>

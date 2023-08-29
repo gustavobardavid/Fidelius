@@ -1,6 +1,7 @@
 package br.com.caelum.vraptor.controller;
 
 import javax.inject.Inject;
+
 import javax.persistence.EntityManager;
 
 import br.com.caelum.vraptor.Controller;

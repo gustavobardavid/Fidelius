@@ -247,9 +247,9 @@
                        <hr>
                          <div class="input-group">
                        
-                            <input name="paciente.nome" type="text" class="form-control" placeholder="Data de Nascimento">
+                            <input name="paciente.dataNascimento" type="text" class="form-control" placeholder="Data de Nascimento">
                             	
-                            <input name="paciente.comorbidade" type="text" class="form-control" placeholder="">
+                            <input name="paciente.preocupa" type="text" class="form-control" placeholder="Preocupa?">
                         
                        </div>
                   <button type="submit" class="btn btn-primary btn-icon-split btn-lg mt-3 mb-3">
