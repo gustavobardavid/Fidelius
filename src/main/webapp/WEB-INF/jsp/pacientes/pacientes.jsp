@@ -243,7 +243,10 @@
                       <td>Gustavo</td>
                       <td>Asma</td>
                       <td>19</td>
-                      <td><a href="<c:url value="situacao"/>"><button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-eye"></i></button></a></td> 
+                      <td>
+                      <a href="<c:url value="situacao"/>"><button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-eye"></i></button></a>
+                      <a href="<c:url value="editarPaciente"/>"><button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-edit"></i></button></a>
+                      </td> 
                     </tr>
                                     
                   </tbody>

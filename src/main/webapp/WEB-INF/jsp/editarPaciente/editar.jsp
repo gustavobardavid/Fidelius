@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+   
 <%@taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
@@ -14,25 +14,21 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Ãrea de Cadastro de Novo Paciente</title>
+  <title>Fidelius - Dashboard</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link
-    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/print-dashboard.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body id="page-top">
 
-  
-
-        <!-- Page Wrapper -->
+  <!-- Page Wrapper -->
   <div id="wrapper">
 
     <!-- Sidebar -->
@@ -66,7 +62,7 @@
       </div>
 
       <!-- Nav Item - Charts -->
-       <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link" href="<c:url value="cadastrarPaciente"/>">
           
 		<i class="fas fa-plus"></i>
@@ -80,7 +76,7 @@
           <span>Pacientes</span></a>
       </li>
 
-     
+    
     </ul>
     <!-- End of Sidebar -->
 
@@ -209,6 +205,18 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
+         
+
+          <!-- Content Row -->
+
+
+          <!-- Content Row -->
+
+          <div class="row">
+
+              <div class="container-fluid">
+
+          <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800 text-center"></h1>
           <div class="row">
             <div class="col-12">
@@ -217,41 +225,69 @@
                          
               <div class="card shadow mb-4 card-novaaposta mx-auto">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary text-center">Cadastre um novo Paciente</h6>
+                  <h6 class="m-0 font-weight-bold text-primary text-center">Editar Plano de Atuação</h6>
                 </div>
                 
                 <div class="card-body">
 
-                  
-
-                    
-                      
-                 
-                  
-
-
-
-
-
                 <div class="card-footer text-center">
                 
-                <form method="post" action="<c:url value='cadastrarPaciente/salvarpaciente'/>">
+                <form method="post" action="<c:url value='situacao/salvarplano'/>">
                    
-                       <div class="input-group">
-                       
-                            <input name="paciente.nome" type="text" class="form-control" placeholder="Nome">
-                            	
-                            <input name="paciente.comorbidade" type="text" class="form-control" placeholder="Comorbidade">
-                        
+                           <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead class="thead-dark">
+                    <tr>
+                      
+                      <th>Objetivos</th>
+                      <th>Data de Inicio</th>
+                      <th>Prioridade</th>
+                      <th>Alcançado</th>
+                     
+                    </tr>
+                  </thead>
+               
+                  <tbody>
+                    <tr>
+                     
+                      <td> <div class="input-group">
+                      
+                            <input name="plano.objetivo" type="text" class="form-control" placeholder="Descrição">
+                         
                        </div>
+                       </td>
+                       
+                      <td><div class="input-group">
+                      		
+                      		<input name="plano.dataInicio" type="datetime-local" class="form-control" placeholder="Data">
+                           
+                         
+                       </div>
+                       </td>
+                       
+                      <td>
+                      <div class="input-group">
+                      
+                            <input name="plano.prioridade" type="Text" class="form-control" placeholder="">
+                         
+                       </div>
+                       </td>
+                      
+                      <td>
+                      <div class="input-group">
+                      
+                          <input name="plano.alcançado" type="checkbox" class="form-control" placeholder="Nome">
+                         
+                       </div>
+                       </td>
+                      
+                    </tr>               
+                  </tbody>
+                  
+                </table>
+              </div>
                        <hr>
-                         <div class="input-group">
-                       
-                            <input name="paciente.dataNascimento" type="text" class="form-control" placeholder="Data de Nascimento">
-                            	
-                            <input name="paciente.Preocupa" type="text" class="form-control" placeholder="Preocupa?">
-                        
-                       </div>
+                         
                   <button type="submit" class="btn btn-primary btn-icon-split btn-lg mt-3 mb-3">
                     
                     <span class="icon text-white-50">
@@ -273,13 +309,17 @@
           </div>
 
         </div>
+           
+          </div>
+
+        </div>
         <!-- /.container-fluid -->
 
       </div>
       <!-- End of Main Content -->
 
       <!-- Footer -->
-      <footer class="sticky-footer bg-white">
+      <footer class="sticky-footer bg-white no-print">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>Copyright &copy; Bardavid SoluÃ§Ãµes 2023</span>
@@ -300,17 +340,16 @@
   </a>
 
   <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Deseja sair?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Deseja realmente Sair?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true"></span>
+            <span aria-hidden="true">Ã</span>
           </button>
         </div>
-        <div class="modal-body">Certifique-se de salvar suas alterações</div>
+        
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
           <a class="btn btn-primary" href="login.html">Sair</a>
@@ -328,6 +367,13 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="js/demo/chart-area-demo.js"></script>
+  <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
 

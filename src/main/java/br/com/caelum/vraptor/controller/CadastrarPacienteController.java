@@ -2,6 +2,7 @@ package br.com.caelum.vraptor.controller;
 
 import javax.inject.Inject;
 
+
 import javax.persistence.EntityManager;
 
 import br.com.caelum.vraptor.Controller;
@@ -23,9 +24,9 @@ public class CadastrarPacienteController {
 		
 	}
 	
-	@Post("cadastrarpaciente")
+	@Post("salvarpaciente")
 	public void cadastrarPaciente(Paciente paciente){
 		em.persist(paciente);
-		result.redirectTo(DashboardController.class).dashboard();;
+		result.redirectTo(PacientesController.class).pacientes();
 	}
 }

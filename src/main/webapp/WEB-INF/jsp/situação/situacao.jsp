@@ -415,35 +415,18 @@
                   <tbody>
                     <tr>
                      
-                      <td> <div class="input-group">
-                      
-                            <input name="plano.objetivo" type="text" class="form-control" placeholder="Descrição">
-                         
-                       </div>
-                       </td>
-                       
-                      <td><div class="input-group">
-                      		
-                      		<input name="plano.dataInicio" type="datetime-local" class="form-control" placeholder="Data">
-                           
-                         
-                       </div>
+                      <td> Melhorar
                        </td>
                        
                       <td>
-                      <div class="input-group">
-                      
-                            <input name="plano.prioridade" type="Text" class="form-control" placeholder="">
-                         
-                       </div>
+                      20/01/2022
+                       </td>
+                       
+                      <td> Alta
                        </td>
                       
-                      <td>
-                      <div class="input-group">
+                      <td> Sim
                       
-                          <input name="plano.alcançado" type="checkbox" class="form-control" placeholder="Nome">
-                         
-                       </div>
                        </td>
                       
                     </tr>               
@@ -453,15 +436,15 @@
               </div>
                        <hr>
                          
-                  <button type="submit" class="btn btn-primary btn-icon-split btn-lg mt-3 mb-3">
+                  <a href="<c:url value="editarPaciente"/>" type="button" class="btn btn-primary btn-icon-split btn-lg mt-3 mb-3">
                     
                     <span class="icon text-white-50">
-                      <i class="fas fa-check"></i>
+                      <i class="fas fa-edit"></i>
                     </span>
                    
-                    <span class="text">Salvar</span>
+                    <span class="text">Editar</span>
                    
-                  </button>
+                  </a>
                 </form>
                   
                 </div>
