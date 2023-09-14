@@ -3,6 +3,8 @@
     
 <%@taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -235,7 +237,12 @@
 
                 <div class="card-footer text-center">
                 
-                <form method="post" action="<c:url value='cadastrarPaciente/salvarpaciente'/>">
+              	
+
+	
+				
+                
+                <form method="post" action="<c:url value='cadastrarPaciente/salvarpaciente'/>" class="form-inline">
                    
                        <div class="input-group">
                        
@@ -249,9 +256,12 @@
                        
                             <input name="paciente.dataNascimento" type="text" class="form-control" placeholder="Data de Nascimento">
                             	
-                            <input name="paciente.Preocupa" type="text" class="form-control" placeholder="Preocupa?">
+                            <input name="paciente.preocupa" type="text" class="form-control" placeholder="Preocupa?">
                         
                        </div>
+                       
+                       
+                       <hr>
                   <button type="submit" class="btn btn-primary btn-icon-split btn-lg mt-3 mb-3">
                     
                     <span class="icon text-white-50">

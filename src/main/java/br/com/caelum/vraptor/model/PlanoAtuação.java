@@ -6,22 +6,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class PlanoAtuação {
+public class PlanoAtuação extends Model {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	
 	private String objetivo;
 	private String dataInicio;
 	private String prioridade;
 	boolean alcançado = false;
 
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
+
 	public String getObjetivo() {
 		return objetivo;
 	}

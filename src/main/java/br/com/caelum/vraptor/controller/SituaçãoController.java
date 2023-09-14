@@ -8,6 +8,7 @@ import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
+import br.com.caelum.vraptor.dao.PlanoAtuacaoDAO;
 import br.com.caelum.vraptor.model.PlanoAtuação;
 
 @Path("situacao")
@@ -16,6 +17,7 @@ public class SituaçãoController {
 	
 	@Inject EntityManager em;
 	@Inject Result result;
+	@Inject PlanoAtuacaoDAO planoAtuacaoDao;
 	
 	@Get("")
 	public void situacao() {
@@ -24,7 +26,11 @@ public class SituaçãoController {
 	
 	@Post("salvarplano")
 	public void salvarPlano(PlanoAtuação plano) {
-		em.persist(plano);
+		//salvar plano no banco
+		
+		planoAtuacaoDao.insertOrUpdate(plano);
+		
+		//direciona para tela paciente
 		result.redirectTo(PacientesController.class).pacientes();
 	}
 }
