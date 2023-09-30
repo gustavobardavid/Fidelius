@@ -5,7 +5,7 @@
 	<version>1.0.0</version>
 	<packaging>war</packaging>
 
-	<description>Um projeto de produtos e estoque com VRaptor 4</description>
+	<description>Sistema de Semiologia Farmaceutica</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
