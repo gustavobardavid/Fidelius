@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<%@taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
 
@@ -221,47 +221,112 @@
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary text-center">Cadastre um novo Paciente</h6>
                 </div>
+               	
+               			<c:if test="${not empty errors}">
+				<div class="alert alert-danger" role="alert">
+					<c:forEach var="error" items="${errors}">
+						 ${error.message}<br/>
+					</c:forEach>
+				</div>
+			</c:if>
+                  
+              
+               
+              </div>
+              
+              <!-- / Fim do Card-->
+              
+                <form method="post" action="<c:url value='cadastrarPaciente/salvarpaciente'/>" class="form-inline">
+                            <!-- Inicio do Card -->
+                         
+              <div class="card shadow mb-4 card-novaaposta mx-auto">
+                
                 
                 <div class="card-body">
 
-                  
-
-                    
-                      
-                 
-                  
-
-
-
-
-
+               <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary text-center">Dados do Paciente</h6>
+                </div>
                 <div class="card-footer text-center">
                 
-              	
-
-	
-				
-                
-                <form method="post" action="<c:url value='cadastrarPaciente/salvarpaciente'/>" class="form-inline">
-                   
-                       <div class="input-group">
+                  <div class="input-group">
                        
                             <input name="paciente.nome" type="text" class="form-control" placeholder="Nome">
                             	
                             <input name="paciente.comorbidade" type="text" class="form-control" placeholder="Comorbidade">
-                        
-                       </div>
-                       <hr>
-                         <div class="input-group">
-                       
                             <input name="paciente.dataNascimento" type="text" class="form-control" placeholder="Data de Nascimento">
+                            
+                       </div>
+                        <hr>
+                   <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary text-center">Plano de Atuação</h6>
+                </div>
+                   
+                           <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead class="thead-dark">
+                    <tr>
+                    
+                      <th>Objetivos</th>
+                      <th>Data de Inicio</th>
+                      <th>Prioridade</th>
+                      <th>Preocupa?</th>
+                      <th>Medicamento</th>
+                    
+                    </tr>
+                  </thead>
+               
+                  <tbody>
+                  <tr>
+              
+                      <td> 
+                      <div class="input-group">
+                      
+                            <input name="paciente.objetivo" type="text" class="form-control" placeholder="Descrição">
+                         
+                       </div>
+                       </td>
+                       
+                      <td>
+                      <div class="input-group">
+                      		
+                      		<input name="paciente.dataInicio" type="datetime" class="form-control" placeholder="Data">
+                           
+                         
+                       </div>
+                       </td>
+                       
+                      <td>
+                      <div class="input-group">
+                      
+                            <input name="paciente.prioridade" type="Text" class="form-control" placeholder="Alta ou Baixa">
+                         
+                       </div>
+                       </td>
+                       <td>
+                        <div class="input-group">
+                       
                             	
                             <input name="paciente.preocupa" type="text" class="form-control" placeholder="Preocupa?">
                         
                        </div>
-                       
-                       
+                       </td>
+                        <td>
+                      <div class="input-group">
+                      
+                          <input name="paciente.medicamento" type="text" class="form-control" placeholder="Nome">
+                         
+                       </div>
+                       </td>
+                                
+                  </tr>
+                  </tbody>
+                  
+                </table>
+              </div>
+              
                        <hr>
+                         
                   <button type="submit" class="btn btn-primary btn-icon-split btn-lg mt-3 mb-3">
                     
                     <span class="icon text-white-50">
@@ -271,13 +336,12 @@
                     <span class="text">Salvar</span>
                    
                   </button>
-                </form>
+            
                   
                 </div>
                 </div>
               </div>
-              
-              <!-- / Fim do Card-->
+              </form>
 
             </div>
           </div>

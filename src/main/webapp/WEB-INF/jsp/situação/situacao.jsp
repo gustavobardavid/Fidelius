@@ -231,7 +231,7 @@
                       
                       <th>Nome</th>
                       
-                      <th>Idade</th>
+                      <th>Id</th>
                      
                     </tr>
                   </thead>
@@ -241,7 +241,8 @@
                      
                       <td>Gustavo</td>
                     
-                      <td>19</td>
+                      <td><p>O ID do paciente é: ${id}</p>
+                      </td>
                       
                     </tr>               
                   </tbody>
@@ -397,8 +398,7 @@
 
                 <div class="card-footer text-center">
                 
-                <form method="post" action="<c:url value='situacao/salvarplano'/>">
-                   
+                  
                            <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead class="thead-dark">
@@ -445,7 +445,7 @@
                     <span class="text">Editar</span>
                    
                   </a>
-                </form>
+                
                   
                 </div>
                 </div>

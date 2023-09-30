@@ -33,7 +33,8 @@ public class CadastrarPacienteController {
 	}
 	
 	@Post("salvarpaciente")
-	public void cadastrarPaciente(@NotNull @Valid Paciente paciente){
+	public void cadastrarPaciente(@Valid Paciente paciente){
+		//em caso de erro, redireciona
 		validator.onErrorRedirectTo(this).cadastrarPaciente();
 		//salvar paciente no banco
 		pacienteDao.insertOrUpdate(paciente);

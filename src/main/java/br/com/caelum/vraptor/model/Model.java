@@ -12,6 +12,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @MappedSuperclass
 //@Audited(withModifiedFlag=true)
@@ -22,6 +23,9 @@ public abstract class Model {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	protected int id;
 	
+
+	
+
 	@Column(updatable=false)
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreationTimestamp
@@ -71,6 +75,7 @@ public abstract class Model {
 	public void setUpdated(Date updated) {
 		this.updated = updated;
 	}
+	
 	
 	/**
 	 * retorna um timestamp de criacao do modelo no formato

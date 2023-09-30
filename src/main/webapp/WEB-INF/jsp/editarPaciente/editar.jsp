@@ -225,14 +225,14 @@
                          
               <div class="card shadow mb-4 card-novaaposta mx-auto">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary text-center">Editar Plano de Atuação</h6>
+                  <h6 class="m-0 font-weight-bold text-primary text-center">Plano de Atuação</h6>
                 </div>
                 
                 <div class="card-body">
 
                 <div class="card-footer text-center">
-                
                 <form method="post" action="<c:url value='situacao/salvarplano'/>">
+                
                    
                            <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -286,6 +286,7 @@
                   
                 </table>
               </div>
+              </form>
                        <hr>
                          
                   <button type="submit" class="btn btn-primary btn-icon-split btn-lg mt-3 mb-3">
@@ -297,7 +298,7 @@
                     <span class="text">Salvar</span>
                    
                   </button>
-                </form>
+               
                   
                 </div>
                 </div>
