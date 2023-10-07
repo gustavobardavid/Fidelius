@@ -45,7 +45,7 @@ public class LoginController {
             // Usuário válido
             result.include("success", "Login bem-sucedido");
           //direcionar para pacientes
-    		result.redirectTo(DashboardController.class).dashboard();
+    		result.redirectTo(PacientesController.class).pacientes();
         }
 
      

@@ -13,7 +13,7 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.validator.constraints.NotEmpty;
-
+//Super classe que agrega atributos comuns aos modelos
 @MappedSuperclass
 //@Audited(withModifiedFlag=true)
 public abstract class Model {
@@ -22,9 +22,6 @@ public abstract class Model {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	protected int id;
-	
-
-	
 
 	@Column(updatable=false)
 	@Temporal(TemporalType.TIMESTAMP)
