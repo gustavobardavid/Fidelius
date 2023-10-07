@@ -11,8 +11,6 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Entity
 public class Paciente extends Model {
 	
-	
-	
 	@NotEmpty(message= "{paciente.nome.vazio}") 
 	private String nome;
 	
@@ -32,7 +30,7 @@ public class Paciente extends Model {
 	private String medicamento;
 	
 	boolean alcançado = false;
-	
+		
 	public String getMedicamento() {
 		return medicamento;
 	}

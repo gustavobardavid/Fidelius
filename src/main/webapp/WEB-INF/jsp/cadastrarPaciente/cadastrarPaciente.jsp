@@ -16,7 +16,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Ãrea de Cadastro de Novo Paciente</title>
+  <title>Área de Cadastro de Novo Paciente</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -52,11 +52,11 @@
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
-      <!-- Nav Item - Dashboard -->
+      <!-- Nav Item - Suporte -->
       <li class="nav-item active">
-        <a class="nav-link" href="<c:url value="dashboard"/>">
+        <a class="nav-link" href="<c:url value="suporte"/>">
     
-          <span>RelatÃ³rio</span></a>
+          <span>Suporte</span></a>
       </li>
 
       <!-- Divider -->
@@ -285,7 +285,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Bardavid SoluÃ§Ãµes 2023</span>
+            <span>Copyright &copy; Bardavid Soluções 2023</span>
           </div>
         </div>
       </footer>

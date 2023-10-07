@@ -9,7 +9,7 @@
 
 <head>
 
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -53,7 +53,7 @@
     <li class="nav-item active">
       <a class="nav-link" href="<c:url value="dashboard"/>">
   
-        <span>RelatÃ³rio</span></a>
+        <span>Suporte</span></a>
     </li>
 
     <!-- Divider -->
@@ -160,7 +160,7 @@
         
             <div class="card-body">
                	<!-- Search -->
-        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+       <!--  <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
           <div class="input-group">
             <input type="text" class="form-control bg-light border-1 small" placeholder="Procurar um paciente" aria-label="Search" aria-describedby="basic-addon2">
             <div class="input-group-append">
@@ -169,13 +169,13 @@
               </button>
             </div>
           </div>
-        </form>
+        </form> -->
         
               <div class="table-responsive">
                 <table id="listaPacientes" class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Id Fidelius</th>
+                      <th>Código Fidelius</th>
                       <th>Nome</th>
                       <th>Comorbidade</th>
                       <th>Data de Nascimento</th>
@@ -186,7 +186,7 @@
                      
                     </tr>
                   </thead>
-                  <tfoot>
+                  <!-- <tfoot>
                     <tr>
                       <th>Id Fidelius</th>
                       <th>Nome</th>
@@ -198,7 +198,7 @@
                       <th>Ações</th>
                       
                     </tr>
-                  </tfoot>
+                  </tfoot> -->
                   <tbody>
                   
                    <%--  <tr>
@@ -215,7 +215,7 @@
                     
                     <c:forEach items="${pacientes}" var="dado">
     					<tr>
-        					<td>${dado.id}</td>
+        					<td>2023200${dado.id}</td>
         					<td>${dado.nome}</td>
         					<td>${dado.comorbidade}</td>
         					<td>${dado.dataNascimento}</td>
@@ -238,7 +238,7 @@
                       
                       <a href="<c:url value='pacientes/deletarpaciente'>
                 <c:param name='id' value='${dado.id}'/>
-            </c:url>" target="_blank">
+            </c:url>">
                       	<button class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"><i class="fas fa-trash"></i>
                      	</button>
                       </a>
@@ -264,7 +264,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Bardavid SoluÃ§Ãµes 2023</span>
+            <span>Copyright &copy; Bardavid Soluções 2023</span>
           </div>
         </div>
       </footer>
