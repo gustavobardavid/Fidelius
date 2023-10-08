@@ -10,7 +10,7 @@
 
 <head>
 
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -41,7 +41,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion no-print" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<c:url value="home"/>">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-heart"></i>
 
@@ -197,7 +197,6 @@
                     <tr>
                     
                       <th>Objetivos</th>
-                      <th>Data de Inicio</th>
                       <th>Prioridade</th>
                       <th>Preocupa?</th>
                       <th>Medicamento</th>
@@ -218,28 +217,22 @@
                        
                       <td>
                       <div class="input-group">
-                      		
-                      		<input name="paciente.dataInicio" type="datetime" class="form-control" placeholder="Data">
-                           
-                         
-                       </div>
-                       </td>
-                       
-                      <td>
-                      <div class="input-group">
                       
                             <input name="paciente.prioridade" type="Text" class="form-control" placeholder="Alta ou Baixa">
                          
                        </div>
                        </td>
+                       
                        <td>
                         <div class="input-group">
-                       
                             	
                             <input name="paciente.preocupa" type="text" class="form-control" placeholder="Preocupa?">
-                        
-                       </div>
+                        	
+                        	</div>
+                    		<div class="text-xs font-weight-bold text-success text-uppercase mb-1">Preocupa: Pouco(P); Bastante(B)</div>
+                     
                        </td>
+                       
                         <td>
                       <div class="input-group">
                       

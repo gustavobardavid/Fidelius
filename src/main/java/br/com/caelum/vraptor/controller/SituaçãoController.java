@@ -10,6 +10,9 @@ import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
+import br.com.caelum.vraptor.dao.PacienteDAO;
+import br.com.caelum.vraptor.dao.PacienteTestDAO;
+import br.com.caelum.vraptor.model.Paciente;
 
 
 @Path("situacao")
@@ -18,12 +21,12 @@ public class SituaçãoController {
 	
 	@Inject EntityManager em;
 	@Inject Result result;
-	
+	@Inject PacienteTestDAO dao;
 	
 	@Get("")
 	public void situacao(int id) {
-		
-		
+		Paciente paciente = dao.findById(id);
+		result.include("paciente", paciente);
 	}
 	
 	@Post("salvarplano")

@@ -1,5 +1,7 @@
 package br.com.caelum.vraptor.controller;
 
+import java.io.UnsupportedEncodingException;
+
 import javax.inject.Inject;
 
 
@@ -33,7 +35,8 @@ public class CadastrarPacienteController {
 	}
 	
 	@Post("salvarpaciente")
-	public void cadastrarPaciente(@Valid Paciente paciente){
+	public void cadastrarPaciente(@Valid Paciente paciente) throws UnsupportedEncodingException{
+		
 		//em caso de erro, redireciona
 		validator.onErrorRedirectTo(this).cadastrarPaciente();
 		//salvar paciente no banco

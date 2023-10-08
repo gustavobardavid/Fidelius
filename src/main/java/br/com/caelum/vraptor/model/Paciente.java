@@ -4,8 +4,6 @@ package br.com.caelum.vraptor.model;
 
 import javax.persistence.Entity;
 
-
-
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
@@ -19,11 +17,9 @@ public class Paciente extends Model {
 	
 	private String dataNascimento;
 
-	private String Preocupa;
+	private char Preocupa;
 	
 	private String objetivo;
-	
-	private String dataInicio;
 	
 	private String prioridade;
 	
@@ -44,12 +40,7 @@ public class Paciente extends Model {
 	public void setObjetivo(String objetivo) {
 		this.objetivo = objetivo;
 	}
-	public String getDataInicio() {
-		return dataInicio;
-	}
-	public void setDataInicio(String dataInicio) {
-		this.dataInicio = dataInicio;
-	}
+	
 	public String getPrioridade() {
 		return prioridade;
 	}
@@ -62,17 +53,18 @@ public class Paciente extends Model {
 	public void setAlcançado(boolean alcançado) {
 		this.alcançado = alcançado;
 	}
-	
+
 	public String getDataNascimento() {
 		return dataNascimento;
 	}
 	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-	public String getPreocupa() {
+	
+	public char getPreocupa() {
 		return Preocupa;
 	}
-	public void setPreocupa(String preocupa) {
+	public void setPreocupa(char preocupa) {
 		Preocupa = preocupa;
 	}
 	public String getNome() {
@@ -87,8 +79,5 @@ public class Paciente extends Model {
 	public void setComorbidade(String comorbidade) {
 		this.comorbidade = comorbidade;
 	}
-	
-	
-	
 	
 }

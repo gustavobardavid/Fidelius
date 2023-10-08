@@ -30,8 +30,12 @@ public class PacientesController {
 		
 		PacienteTestDAO dao = new PacienteTestDAO();
 		List<Paciente> pacientes = dao.findAll();
-		result.include("pacientes",pacientes);
-		 
+		result.include("pacientes",pacientes);	 
+	}
+	
+	@Get("editar")
+	public void editar() {
+		
 	}
 	
 	@Get
@@ -45,5 +49,11 @@ public class PacientesController {
 		result.redirectTo(PacientesController.class).pacientes();
 	}
 	
-	
+	/*
+	 * @Get
+	 * 
+	 * @Path("editarpaciente") public void editarPaciente (Paciente paciente) { //
+	 * atualiza o paciente dao.insertOrUpdate(paciente);
+	 * result.redirectTo(EditarPacienteController.class).editar(); }
+	 */
 }

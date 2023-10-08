@@ -26,18 +26,20 @@ public class HomeController {
 		List<Paciente> pacientes = daoTest.findAll();
 		int contadorPacientes = 0;
 		int contadorAlcançado = 0;
+		int contadorPreocupante = 0;
 		//conta quantos pacientes existem com id ativo(softdelete)
-		for (Paciente paciente : pacientes) {
-			contadorPacientes++;
-		}
 		for (Paciente paciente : pacientes) {
 			if(paciente.isAlcançado() == true) {
 				contadorAlcançado++;
 			}
+			if (paciente.getPreocupa() == 'B') {
+				contadorPreocupante++;
+			}
+			contadorPacientes++;
 		}
-		
 		
 		result.include("contadorPacientes", contadorPacientes);
 		result.include("contadorAlcançado", contadorAlcançado);
+		result.include("contadorPreocupante", contadorPreocupante);
 	}
 }

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
    
-<%@taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -14,7 +14,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Fidelius - Dashboard</title>
+  <title>Editar Plano de Atuação</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -50,7 +50,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="<c:url value="dashboard"/>">
     
-          <span>RelatÃ³rio</span></a>
+          <span>Suporte</span></a>
       </li>
 
       <!-- Divider -->
@@ -95,92 +95,27 @@
           </button>
 
           <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Procurar" aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
+         
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-            <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-search fa-fw"></i>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                <form class="form-inline mr-auto w-100 navbar-search">
-                  <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </li>
+          
 
             <!-- Nav Item - Alerts -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-bell fa-fw"></i>
-                <!-- Counter - Alerts -->
-                <span class="badge badge-danger badge-counter">1+</span>
-              </a>
-              <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                <h6 class="dropdown-header">
-                  Alertas
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">Hoje Ã s 13:45</div>
-                    13 Novas Consultas agendadas!
-                  </div>
-                </a>
-                
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-              </div>
-            </li>
+            
 
             <!-- Nav Item - Messages -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-envelope fa-fw"></i>
-                <!-- Counter - Messages -->
-                <!-- <span class="badge badge-danger badge-counter">7</span> -->
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-                <h6 class="dropdown-header">
-                  Mensagens
-                </h6>
-                
-                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-              </div>
-            </li>
+           
 
-            <div class="topbar-divider d-none d-sm-block"></div>
+            
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Giselle Rocha</span>
-                <img class="img-profile rounded-circle" src="img/giselle.png">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Você</span>
+                <!-- <img class="img-profile rounded-circle" src=""> -->
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -231,16 +166,16 @@
                 <div class="card-body">
 
                 <div class="card-footer text-center">
-                <form method="post" action="<c:url value='situacao/salvarplano'/>">
-                
-                   
+                <form method="post" action="<c:url value='editarPaciente/editarpaciente'> 
+            </c:url>">               
                            <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead class="thead-dark">
                     <tr>
-                      
+                      <th>Código Fidelius</th>
+                      <th>Preocupa?</th>
                       <th>Objetivos</th>
-                      <th>Data de Inicio</th>
+                      <th>Medicamento</th>
                       <th>Prioridade</th>
                       <th>Alcançado</th>
                      
@@ -249,17 +184,32 @@
                
                   <tbody>
                     <tr>
+                     <td> 
+                     <div class="input-group">
+                      		
+                      		<input type="hidden" name="paciente.id" value="<c:out value="${paciente.id}" />" class="form-control" placeholder="<c:out value="${paciente.id}"/>">
+                      		
+                            
+                       </div>
+                       </td>
+                    <td> <div class="input-group">
+                      		
+                      		<input type="text" name="paciente.preocupa" value="<c:out value="${paciente.preocupa}" />" class="form-control" placeholder="<c:out value="${paciente.preocupa}"/>"/>
                      
+                       </div>
+                      		<div class="text-xs font-weight-bold text-success text-uppercase mb-1">Preocupa: Pouco(P); Bastante(B)</div>
+                       </td>
+                       
                       <td> <div class="input-group">
-                      
-                            <input name="plano.objetivo" type="text" class="form-control" placeholder="Descrição">
+                      		
+                            <input name="paciente.objetivo" type="text" value="<c:out value="${paciente.objetivo}" />" class="form-control" placeholder="<c:out value="${paciente.objetivo}" />">
                          
                        </div>
                        </td>
                        
                       <td><div class="input-group">
                       		
-                      		<input name="plano.dataInicio" type="datetime-local" class="form-control" placeholder="Data">
+                      		<input name="paciente.medicamento" type="text" value="<c:out value="${paciente.medicamento}" />" class="form-control" placeholder="<c:out value="${paciente.medicamento}" />">
                            
                          
                        </div>
@@ -268,7 +218,7 @@
                       <td>
                       <div class="input-group">
                       
-                            <input name="plano.prioridade" type="Text" class="form-control" placeholder="">
+                            <input name="paciente.prioridade" type="Text" value="<c:out value="${paciente.prioridade}" />" class="form-control" placeholder="<c:out value="${paciente.prioridade}" />">
                          
                        </div>
                        </td>
@@ -276,7 +226,7 @@
                       <td>
                       <div class="input-group">
                       
-                          <input name="plano.alcançado" type="checkbox" class="form-control" placeholder="Nome">
+                          <input name="paciente.alcançado" type="text" value="<c:out value="${paciente.alcançado}" />" class="form-control" placeholder="<c:out value="${paciente.alcançado}" />">
                          
                        </div>
                        </td>
@@ -286,9 +236,6 @@
                   
                 </table>
               </div>
-              </form>
-                       <hr>
-                         
                   <button type="submit" class="btn btn-primary btn-icon-split btn-lg mt-3 mb-3">
                     
                     <span class="icon text-white-50">
@@ -298,8 +245,8 @@
                     <span class="text">Salvar</span>
                    
                   </button>
-               
-                  
+              </form>
+                                           
                 </div>
                 </div>
               </div>
@@ -323,7 +270,7 @@
       <footer class="sticky-footer bg-white no-print">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Bardavid SoluÃ§Ãµes 2023</span>
+            <span>Copyright &copy; Bardavid Soluções 2023</span>
           </div>
         </div>
       </footer>
@@ -347,7 +294,7 @@
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Deseja realmente Sair?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">Ã</span>
+            <span aria-hidden="true"></span>
           </button>
         </div>
         

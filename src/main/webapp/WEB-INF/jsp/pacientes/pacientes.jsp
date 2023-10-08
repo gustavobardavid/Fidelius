@@ -38,7 +38,7 @@
   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion no-print" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<c:url value="home"/>">
       <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-heart"></i>
 
@@ -51,7 +51,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-      <a class="nav-link" href="<c:url value="dashboard"/>">
+      <a class="nav-link" href="<c:url value="suporte"/>">
   
         <span>Suporte</span></a>
     </li>
@@ -215,7 +215,7 @@
                     
                     <c:forEach items="${pacientes}" var="dado">
     					<tr>
-        					<td>2023200${dado.id}</td>
+        					<td>${dado.getCreatedTimeFormated()}${dado.id}</td>
         					<td>${dado.nome}</td>
         					<td>${dado.comorbidade}</td>
         					<td>${dado.dataNascimento}</td>
@@ -226,16 +226,11 @@
                       
                       <a href="<c:url value='situacao'>
                 <c:param name='id' value='${dado.id}'/>
-            </c:url>" target="_blank">
+            </c:url>">
             <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-eye"></i>
             </button>
             </a>
-                      
-                      <a href="<c:url value="editarPaciente"/>">
-                      	<button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-edit"></i>
-                      	</button>
-                      </a>
-                      
+                  
                       <a href="<c:url value='pacientes/deletarpaciente'>
                 <c:param name='id' value='${dado.id}'/>
             </c:url>">
