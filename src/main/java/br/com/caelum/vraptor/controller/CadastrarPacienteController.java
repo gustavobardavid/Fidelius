@@ -39,8 +39,18 @@ public class CadastrarPacienteController {
 		
 		//em caso de erro, redireciona
 		validator.onErrorRedirectTo(this).cadastrarPaciente();
-		//salvar paciente no banco
-		pacienteDao.insertOrUpdate(paciente);
+		
+		// Configurar a codificação para UTF-8
+	    String nomePaciente = new String(paciente.getNome().getBytes("UTF-8"), "UTF-8");
+	    paciente.setNome(nomePaciente);
+	    
+	    // Configurar a codificação para UTF-8
+	    String comorbidadePaciente = new String(paciente.getComorbidade().getBytes("UTF-8"), "UTF-8");
+	    paciente.setComorbidade(comorbidadePaciente);
+	    System.out.println(paciente.getComorbidade()+ paciente.getNome());
+	    //salvar paciente no banco
+	
+	    pacienteDao.insertOrUpdate(paciente);
 		
 		//direcionar para pacientes
 		result.redirectTo(PacientesController.class).pacientes();

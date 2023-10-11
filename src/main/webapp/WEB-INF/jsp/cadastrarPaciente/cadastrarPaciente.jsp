@@ -165,7 +165,7 @@
               
               <!-- / Fim do Card-->
               
-                <form method="post" action="<c:url value='cadastrarPaciente/salvarpaciente'/>" class="form-inline">
+                <form method="post" action="<c:url value='cadastrarPaciente/salvarpaciente'/>" class="form-inline" accept-charset="UTF-8">
                             <!-- Inicio do Card -->
                          
               <div class="card shadow mb-4 card-novaaposta mx-auto">
