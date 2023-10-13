@@ -2,7 +2,7 @@
 
 ### Bem-vindo ao Sistema de Semiologia Farmacêutica desenvolvido em Java! Este sistema será criado para auxiliar os profissionais da área farmacêutica no registro e gerenciamento de informações relacionadas à semiologia e à prescrição de medicamentos.
 
-![Tela de Situação](./Public/Tela%20de%20Situação.png){width=300 height=200}
+![Tela de Situação](./Public/Tela%20de%20Situação.png)
 
 ## Funcionalidades 🔍📋
 
@@ -12,13 +12,13 @@ Plano de atuação: Registre um plano de acompanhamento farmacêutico, com objet
 
 
 ## Capturas de Tela 📸
-__Aqui terão algumas capturas de tela do sistema__
-
 Tela de Cadastro de Pacientes
-Figura 1: __aqui terá uma Tela de Cadastro de Pacientes__
+![Tela de Cadastro](./Public/Tela%20de%20Cadastro.png)
+Figura 2 
 
-Tela do Plano de Atuação
-Figura 2: __aqui terá uma Tela de Plano de atuação__
+Tela de Suporte
+![Tela de Suporte](./Public/Tela%20de%20Suporte.png)
+Figura 3 
 
 
 ## Contribuições e Feedback 🤝🔧
