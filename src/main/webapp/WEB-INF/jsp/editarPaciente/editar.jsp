@@ -35,7 +35,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion no-print" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<c:url value="home"/>">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-heart"></i>
 
@@ -48,7 +48,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="<c:url value="dashboard"/>">
+        <a class="nav-link" href="<c:url value="suporte"/>">
     
           <span>Suporte</span></a>
       </li>
@@ -112,12 +112,12 @@
             
 
             <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
+           <!--  <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Você</span>
-                <!-- <img class="img-profile rounded-circle" src=""> -->
+                <img class="img-profile rounded-circle" src="">
               </a>
-              <!-- Dropdown - User Information -->
+              Dropdown - User Information
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -129,7 +129,7 @@
                   Sair
                 </a>
               </div>
-            </li>
+            </li> -->
 
           </ul>
 
@@ -160,7 +160,7 @@
                          
               <div class="card shadow mb-4 card-novaaposta mx-auto">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary text-center">Plano de Atuação</h6>
+                  <h6 class="m-0 font-weight-bold text-primary text-center">Edite o Plano de Atuação</h6>
                 </div>
                 
                 <div class="card-body">
@@ -187,7 +187,7 @@
                      <td> 
                      <div class="input-group">
                       		
-                      		<input type="hidden" name="paciente.id" value="<c:out value="${paciente.id}" />" class="form-control" placeholder="<c:out value="${paciente.id}"/>">
+                      		<input type="hidden" name="paciente.id" value="<c:out value="${paciente.id}" />" class="form-control" placeholder="<c:out value="${paciente.getYearMonth()}00${paciente.id}"/>">
                       		
                             
                        </div>
@@ -227,6 +227,58 @@
                       <div class="input-group">
                       
                           <input name="paciente.alcançado" type="text" value="<c:out value="${paciente.alcançado}" />" class="form-control" placeholder="<c:out value="${paciente.alcançado}" />">
+                         
+                       </div>
+                       </td>
+                      
+                    </tr>               
+                  </tbody>
+                  
+                </table>
+                <hr>
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary text-center">Edite as Observações Médicas</h6>
+                </div>
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th>Descrição</th>
+                      <th>Histórico Médico</th>
+                      <th>Alergias</th>
+                      <th>Grupo Sanguíneo</th>
+                      
+                    </tr>
+                  </thead>
+               
+                  <tbody>
+                    <tr>
+                     
+                    <td> <div class="input-group">
+                      		
+                      		<input type="text" name="paciente.observacoesMedicas" value="<c:out value="${paciente.observacoesMedicas}" />" class="form-control" placeholder="<c:out value="${paciente.observacoesMedicas}"/>"/>
+                     
+                       </div>
+                      		</td>
+                       
+                      <td> <div class="input-group">
+                      		
+                            <input name="paciente.historicoMedico" type="text" value="<c:out value="${paciente.historicoMedico}" />" class="form-control" placeholder="<c:out value="${paciente.historicoMedico}" />">
+                         
+                       </div>
+                       </td>
+                       
+                      <td><div class="input-group">
+                      		
+                      		<input name="paciente.alergias" type="text" value="<c:out value="${paciente.alergias}" />" class="form-control" placeholder="<c:out value="${paciente.alergias}" />">
+                           
+                         
+                       </div>
+                       </td>
+                       
+                      <td>
+                      <div class="input-group">
+                      
+                            <input name="paciente.grupoSanguineo" type="Text" value="<c:out value="${paciente.grupoSanguineo}" />" class="form-control" placeholder="<c:out value="${paciente.grupoSanguineo}" />">
                          
                        </div>
                        </td>

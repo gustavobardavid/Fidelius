@@ -113,12 +113,12 @@
             <!-- Nav Item - Messages -->
 
             <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
+            <!-- <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Você</span>
-                <!-- <img class="img-profile rounded-circle" src=""> -->
+                <img class="img-profile rounded-circle" src="">
               </a>
-              <!-- Dropdown - User Information -->
+              Dropdown - User Information
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -130,7 +130,7 @@
                   Sair
                 </a>
               </div>
-            </li>
+            </li> -->
 
           </ul>
 
@@ -143,7 +143,7 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4 no-print">
             <h1 class="h3 mb-0 text-gray-800">Estado de Situação </h1>
-            <button onclick="window.print()" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Gerar Relatório</button>
+            <button onclick="window.print(); ocultarBotaoEditar();" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Gerar Relatório</button>
           </div>
 
           <div class="d-sm-flex align-items-center justify-content-center mb-4 only-print">
@@ -166,6 +166,7 @@
                     <tr>
                       
                       <th>Nome</th>
+                      
                      
                     </tr>
                   </thead>
@@ -175,10 +176,30 @@
                      
                       <td><c:out value="${paciente.nome}" /></td>
                      
+                     
                     </tr>               
                   </tbody>
                   
                 </table>
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead  class="thead-dark">
+                    <tr>
+                      
+                      <th>Telefone</th>
+                     
+                    </tr>
+                  </thead>
+               
+                  <tbody>
+                    <tr>
+                     
+                      <td><c:out value="${paciente.numeroTelefone}" /></td>
+                     
+                    </tr>               
+                  </tbody>
+                  
+                </table>
+                
               </div>
              
                     </div>
@@ -202,9 +223,6 @@
                     <tr>
                       
                       <th>Comorbidade</th>
-                      
-                      <th>Preocupa?</th>
-                     
                     </tr>
                   </thead>
                
@@ -212,6 +230,21 @@
                     <tr>
                      
                       <td><c:out value="${paciente.comorbidade}" /></td>
+                      
+                    </tr>               
+                  </tbody>
+                  
+                </table>
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead  class="thead-dark">
+                    <tr>
+                 
+                      <th>Preocupa?</th>
+                    </tr>
+                  </thead>
+               
+                  <tbody>
+                    <tr>
                     
                       <td><c:out value="${paciente.preocupa}" /></td>
                       
@@ -242,7 +275,6 @@
                       
                       <th>Qual?</th>
                       
-                      <th>Desde?</th>
                      
                     </tr>
                   </thead>
@@ -251,6 +283,22 @@
                     <tr>
                      
                       <td><c:out value="${paciente.medicamento}" /></td>
+                      
+                    </tr>               
+                  </tbody>
+                  
+                </table>
+                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead class="thead-dark" >
+                    <tr>
+                    
+                      <th>Desde?</th>
+                     
+                    </tr>
+                  </thead>
+               
+                  <tbody>
+                    <tr>
                     
                       <td><c:out value="${paciente.getUpdatedFormated()}" /></td>
                       
@@ -279,7 +327,7 @@
                     <tr>
                       
                       <th>Última Atualização</th>
-                    
+                     
                     </tr>
                   </thead>
                
@@ -287,13 +335,32 @@
                     <tr>
 
                       <td><c:out value="${paciente.getUpdatedFormated()}" /></td>
+                      
+                    </tr>               
+                  </tbody>
+                  
+                </table>
+                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead  class="thead-dark">
+                    <tr>
+                      
+                     
+                      <th>Endereço</th>
+                    </tr>
+                  </thead>
+               
+                  <tbody>
+                    <tr>
+
+                     
+                      <td><c:out value="${paciente.endereco}" /></td>
                     
                     </tr>               
                   </tbody>
                   
                 </table>
+                
               </div>
-              <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Preocupa: Pouco(P); Bastante(B)</div>
                     </div>
                    
                   </div>
@@ -360,12 +427,49 @@
                   </tbody>
                   
                 </table>
+                 <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary text-center">Observações Médicas</h6>
+                </div>
+                <hr>
+                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead class="thead-dark">
+                    <tr>
+                      
+                      <th>Observações Médicas</th>
+                      <th>Histórico Médico</th>
+                      <th>Alergias</th>
+                      <th>Grupo Sanguíneo</th>
+                      
+                    </tr>
+                  </thead>
+               
+                  <tbody>
+                    <tr>
+                     
+                      <td> <c:out value="${paciente.observacoesMedicas}" />
+                       </td>
+                       
+                      <td>
+                      <c:out value="${paciente.historicoMedico}" />
+                       </td>
+                       
+                      <td><c:out value="${paciente.alergias}" />
+                       </td>
+                      
+                   <td><c:out value="${paciente.grupoSanguineo}" />
+                       </td>
+                      
+                      
+                    </tr>               
+                  </tbody>
+                  
+                </table>
               </div>
                        <hr>
                          
                   <a href="<c:url value='editarPaciente'>
                 <c:param name='id' value='${paciente.id}'/>
-            </c:url>" type="button" class="btn btn-primary btn-icon-split btn-lg mt-3 mb-3">
+            </c:url>" type="button" class="btn btn-primary btn-icon-split btn-lg mt-3 mb-3" id="editarButton">
                     
                     <span class="icon text-white-50">
                       <i class="fas fa-edit"></i>
@@ -451,6 +555,13 @@
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
+  <script>
+function ocultarBotaoEditar() {
+    // Oculta o botão "Editar" quando o botão de impressão "Gerar Relatório" for clicado
+    document.querySelector("#editarButton").style.display = 'none';
+}
+</script>
+  
 
 </body>
 

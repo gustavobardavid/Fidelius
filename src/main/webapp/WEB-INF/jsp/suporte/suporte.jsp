@@ -67,70 +67,55 @@
                         </li> -->
                     </ul>
                 </nav>
-                <div class="container-fluid">
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4 no-print">
-                        <h1 class="h3 mb-0 text-gray-800">Relatório</h1>
-                        <button onclick="window.print()" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Gerar Relatório</button>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 col-md-12 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Pacientes Preocupantes</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <c:out value="${contadorPreocupante}" />
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-exclamation-triangle fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Pacientes com plano alcançado</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <c:out value="${contadorAlcançado}" />
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-check fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total de pacientes</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <c:out value="${contadorPacientes}" />
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-heart fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                
+                <!-- inicio do conteudo da pagina -->
+                <form method="post" action="<c:url value='suporte/enviar'/>" class="form-inline" accept-charset="UTF-8">
+                            <!-- Inicio do Card -->
+                         
+              <div class="card shadow mb-4 card-novaaposta mx-auto">
+                
+                
+                <div class="card-body">
+
+                       		
+               <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary text-center">Envie-nos um ticket de suporte</h6>
                 </div>
+                <div class="card-footer text-center">
+                
+                  <div class="input-group">
+                            <input name="paciente.grupoSanguineo" type="text" class="form-control" placeholder="Seu nome">
+                       		<input name="paciente.numeroTelefone" type="email" class="form-control" placeholder="Seu e-mail" required>	
+                       </div>
+                       <hr>
+                       <div class="input-group">
+                       <input name="paciente.numeroTelefone" type="text" class="form-control" placeholder="Descreva o problema que está enfrentando" required>	
+                       
+                            </div>
+                        <hr>
+                         
+                  <button type="submit" class="btn btn-primary btn-icon-split btn-lg mt-3 mb-3">
+                    
+                    <span class="icon text-white-50">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                   
+                    <span class="text">Enviar</span>
+                   
+                  </button>
+            
+                  
+                </div>
+                </div>
+              </div>
+              </form>
+                
+                <!-- fim do conteudo da pagina -->
             </div>
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>&copy; Bardavid Soluções 2023</span>
+                        <span>Copyright &copy; Bardavid Soluções 2023</span>
                     </div>
                 </div>
             </footer>

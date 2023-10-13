@@ -27,6 +27,7 @@ public class SituaçãoController {
 	public void situacao(int id) {
 		Paciente paciente = dao.findById(id);
 		result.include("paciente", paciente);
+		
 	}
 	
 	@Post("salvarplano")
@@ -35,5 +36,7 @@ public class SituaçãoController {
 		
 		//direciona para tela paciente
 		result.redirectTo(PacientesController.class).pacientes();
+		
+
 	}
 }

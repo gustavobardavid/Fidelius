@@ -127,6 +127,11 @@ public abstract class Model {
 	public String getUpdatedTimeFormated() {
 		return new SimpleDateFormat("HH:mm").format(getUpdated());
 	}
+	//retorna ano seguido do mês (para codigo)
+	 public String getYearMonth() {
+	        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMM");
+	        return sdf.format(getCreated());
+	}
 
 	public boolean isAtivo() {
 		return ativo;

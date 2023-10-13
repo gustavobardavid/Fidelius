@@ -112,12 +112,12 @@
             <!-- Nav Item - Messages -->
           
             <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
+            <!-- <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Você</span>
-                <!-- <img class="img-profile rounded-circle" src=""> -->
+                <img class="img-profile rounded-circle" src="">
               </a>
-              <!-- Dropdown - User Information -->
+              Dropdown - User Information
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -129,7 +129,7 @@
                   Sair
                 </a>
               </div>
-            </li>
+            </li> -->
 
           </ul>
 
@@ -173,19 +173,24 @@
                 
                 <div class="card-body">
 
+                       		
                <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary text-center">Dados do Paciente</h6>
                 </div>
                 <div class="card-footer text-center">
                 
                   <div class="input-group">
-                       
-                            <input name="paciente.nome" type="text" class="form-control" placeholder="Nome">
-                            	
-                            <input name="paciente.comorbidade" type="text" class="form-control" placeholder="Comorbidade">
-                            <input name="paciente.dataNascimento" type="text" class="form-control" placeholder="Data de Nascimento">
-                            
+                            <input name="paciente.nome" type="text" class="form-control" placeholder="*Nome" required>	
+                            <input name="paciente.comorbidade" type="text" class="form-control" placeholder="*Comorbidade" required>
+                            <input name="paciente.grupoSanguineo" type="text" class="form-control" placeholder="Grupo Sanguíneo">
                        </div>
+                       <hr>
+                       <div class="input-group">
+                       		<input name="paciente.dataNascimento" type="text" class="form-control" placeholder="Data de Nascimento">
+                            
+                            <input name="paciente.endereco" type="text" class="form-control" placeholder="Endereço">
+                            <input name="paciente.numeroTelefone" type="text" class="form-control" placeholder="*Telefone" required>	
+                            </div>
                         <hr>
                    <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary text-center">Plano de Atuação</h6>
@@ -236,17 +241,26 @@
                         <td>
                       <div class="input-group">
                       
-                          <input name="paciente.medicamento" type="text" class="form-control" placeholder="Nome">
+                          <input name="paciente.medicamento" type="text" class="form-control" placeholder="Ex: Aerodini">
                          
                        </div>
                        </td>
                                 
                   </tr>
                   </tbody>
-                  
                 </table>
+                
+                  <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary text-center">Observações Médicas</h6>
+                </div>
+                <hr>
+                  <div class="input-group">
+                       
+                            <input name="paciente.observacoesMedicas" type="text" class="form-control" placeholder="Observações">	
+                            <input name="paciente.historicoMedico" type="text" class="form-control" placeholder="Histórico Médico">
+                            <input name="paciente.alergias" type="text" class="form-control" placeholder="Alergias">
+                            </div>
               </div>
-              
                        <hr>
                          
                   <button type="submit" class="btn btn-primary btn-icon-split btn-lg mt-3 mb-3">
@@ -261,6 +275,7 @@
             
                   
                 </div>
+              <span class="group-text">O símbolo * sinaliza um campo obrigatório</span>
                 </div>
               </div>
               </form>
