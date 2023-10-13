@@ -2,7 +2,7 @@
 
 ### Bem-vindo ao Sistema de Semiologia Farmacêutica desenvolvido em Java! Este sistema será criado para auxiliar os profissionais da área farmacêutica no registro e gerenciamento de informações relacionadas à semiologia e à prescrição de medicamentos.
 
-__Aqui terá uma imagem do Sistema__
+![Tela de Situação](./Public/Tela%20de%20Situação.png){width=300 height=200}
 
 ## Funcionalidades 🔍📋
 
@@ -33,10 +33,10 @@ Pela ideia e apoio durante todo o projeto
 
 ## Tecnologias que serão Utilizadas 🛠️
   Java
-  
-  Html e css (Front-end)
-  
-  PostgreSQL (para o armazenamento de dados)
+  Java Server Pages 
+  PostgreSQL
+  Hibernate
+  Vraptor
 
 ## Contato 📞
 Se você tiver alguma dúvida ou precisar de suporte, entre em contato comigo pelo instagram: instagram.com/gustavobardavid .
