@@ -51,6 +51,8 @@ public class CadastrarPacienteController {
 		//setando o arraylist
 		ArrayList<Medicamento> medicamentos = new ArrayList<Medicamento>();
 		paciente.setMedicamentos(medicamentos);
+		//setando o paciente na classe medicamento
+		medicamento.setPaciente(paciente);
 		//setando o medicamento no arraylist do paciente
 		paciente.addMedicamento(medicamento);
 		//salvar plano no banco

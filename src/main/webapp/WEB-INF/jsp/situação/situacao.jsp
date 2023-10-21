@@ -7,6 +7,9 @@
 
 <%@ page import="java.util.Date" %>
 
+
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -246,7 +249,7 @@
                   <tbody>
                     <tr>
                     
-                      <td><c:out value="${paciente.preocupa}" /></td>
+                      <td><c:out value="${paciente.getPlanoAtuacao().preocupa}" /></td>
                       
                     </tr>               
                   </tbody>
@@ -272,18 +275,22 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead class="thead-dark" >
                     <tr>
-                      
-                      <th>Qual?</th>
-                      
                      
+                      <th>Quais?</th>
+                    
                     </tr>
                   </thead>
                
                   <tbody>
                     <tr>
-                     
-                      <td><c:out value="${paciente.medicamento}" /></td>
-                      
+                    <td>
+                      <c:forEach var="medicamento" items="${paciente.getMedicamentos()}">
+        				<c:out value="${medicamento.getNome()}" />
+        				<c:if test="${!empty medicamentoIndex && medicamentoIndex != fn:length(paciente.getMedicamentos()) - 1}">
+        				,
+        				</c:if>
+    					</c:forEach>
+                      </td>
                     </tr>               
                   </tbody>
                   
@@ -409,14 +416,14 @@
                   <tbody>
                     <tr>
                      
-                      <td> <c:out value="${paciente.objetivo}" />
+                      <td> <c:out value="${paciente.getPlanoAtuacao().objetivo}" />
                        </td>
                        
                       <td>
                       <c:out value="${paciente.getCreatedFormated()}" />
                        </td>
                        
-                      <td><c:out value="${paciente.prioridade}" />
+                      <td><c:out value="${paciente.getPlanoAtuacao().prioridade}" />
                        </td>
                       
                       <td> <c:out value="${paciente.alcançado}" />
@@ -446,14 +453,14 @@
                   <tbody>
                     <tr>
                      
-                      <td> <c:out value="${paciente.observacoesMedicas}" />
+                      <td> <c:out value="${paciente.getPlanoAtuacao().observacoesMedicas}" />
                        </td>
                        
                       <td>
-                      <c:out value="${paciente.historicoMedico}" />
+                      <c:out value="${paciente.getPlanoAtuacao().historicoMedico}" />
                        </td>
                        
-                      <td><c:out value="${paciente.alergias}" />
+                      <td><c:out value="${paciente.getPlanoAtuacao().alergias}" />
                        </td>
                       
                    <td><c:out value="${paciente.grupoSanguineo}" />

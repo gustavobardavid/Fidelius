@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -38,7 +39,7 @@ public class Paciente extends Model {
 	private PlanoAtuacao planoAtuacao;
 	
 	// Anotando a coleção que representa o relacionamento um para muitos
-    @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Medicamento> medicamentos = new ArrayList<>();
 	
 	public PlanoAtuacao getPlanoAtuacao() {
