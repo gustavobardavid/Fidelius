@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
    
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -175,7 +175,6 @@
                       <th>Código Fidelius</th>
                       <th>Preocupa?</th>
                       <th>Objetivos</th>
-                      <th>Medicamento</th>
                       <th>Prioridade</th>
                       <th>Alcançado</th>
                      
@@ -189,12 +188,11 @@
                       		
                       		<input type="hidden" name="paciente.id" value="<c:out value="${paciente.id}" />" class="form-control" placeholder="<c:out value="${paciente.getYearMonth()}00${paciente.id}"/>">
                       		
-                            
                        </div>
                        </td>
                     <td> <div class="input-group">
                       		
-                      		<input type="text" name="paciente.preocupa" value="<c:out value="${paciente.preocupa}" />" class="form-control" placeholder="<c:out value="${paciente.preocupa}"/>"/>
+                      		<input type="text" name="paciente.planoAtuacao.preocupa" value="<c:out value="${paciente.getPlanoAtuacao().preocupa}" />" class="form-control" placeholder="<c:out value="${paciente.getPlanoAtuacao().preocupa}"/>"/>
                      
                        </div>
                       		<div class="text-xs font-weight-bold text-success text-uppercase mb-1">Preocupa: Pouco(P); Bastante(B)</div>
@@ -202,15 +200,7 @@
                        
                       <td> <div class="input-group">
                       		
-                            <input name="paciente.objetivo" type="text" value="<c:out value="${paciente.objetivo}" />" class="form-control" placeholder="<c:out value="${paciente.objetivo}" />">
-                         
-                       </div>
-                       </td>
-                       
-                      <td><div class="input-group">
-                      		
-                      		<input name="paciente.medicamento" type="text" value="<c:out value="${paciente.medicamento}" />" class="form-control" placeholder="<c:out value="${paciente.medicamento}" />">
-                           
+                            <input name="paciente.planoatuacao.objetivo" type="text" value="<c:out value="${paciente.getPlanoAtuacao().objetivo}" />" class="form-control" placeholder="<c:out value="${paciente.getPlanoAtuacao().objetivo}" />">
                          
                        </div>
                        </td>
@@ -218,7 +208,7 @@
                       <td>
                       <div class="input-group">
                       
-                            <input name="paciente.prioridade" type="Text" value="<c:out value="${paciente.prioridade}" />" class="form-control" placeholder="<c:out value="${paciente.prioridade}" />">
+                            <input name="paciente.planoAtuacao.prioridade" type="Text" value="<c:out value="${paciente.getPlanoAtuacao().prioridade}" />" class="form-control" placeholder="<c:out value="${paciente.getPlanoAtuacao().prioridade}" />">
                          
                        </div>
                        </td>
@@ -255,21 +245,73 @@
                      
                     <td> <div class="input-group">
                       		
-                      		<input type="text" name="paciente.observacoesMedicas" value="<c:out value="${paciente.observacoesMedicas}" />" class="form-control" placeholder="<c:out value="${paciente.observacoesMedicas}"/>"/>
+                      		<input type="text" name="paciente.planoAtuacao.observacoesMedicas" value="<c:out value="${paciente.getPlanoAtuacao().observacoesMedicas}" />" class="form-control" placeholder="<c:out value="${paciente.getPlanoAtuacao().observacoesMedicas}"/>"/>
                      
                        </div>
                       		</td>
                        
                       <td> <div class="input-group">
                       		
-                            <input name="paciente.historicoMedico" type="text" value="<c:out value="${paciente.historicoMedico}" />" class="form-control" placeholder="<c:out value="${paciente.historicoMedico}" />">
+                            <input name="paciente.planoAtuacao.historicoMedico" type="text" value="<c:out value="${paciente.getPlanoAtuacao().historicoMedico}" />" class="form-control" placeholder="<c:out value="${paciente.getPlanoAtuacao().historicoMedico}" />">
                          
                        </div>
                        </td>
                        
                       <td><div class="input-group">
                       		
-                      		<input name="paciente.alergias" type="text" value="<c:out value="${paciente.alergias}" />" class="form-control" placeholder="<c:out value="${paciente.alergias}" />">
+                      		<input name="paciente.planoAtuacao.alergias" type="text" value="<c:out value="${paciente.getPlanoAtuacao().alergias}" />" class="form-control" placeholder="<c:out value="${paciente.getPlanoAtuacao().alergias}" />">
+                           
+                         
+                       </div>
+                       </td>
+                       
+                      <td>
+                      <div class="input-group">
+                      
+                            <input name="paciente.grupoSanguineo" type="Text" value="<c:out value="${paciente.grupoSanguineo}" />" class="form-control" placeholder="<c:out value="${paciente.grupoSanguineo}" />">
+                         
+                       </div>
+                       </td>
+                      
+                    </tr>               
+                  </tbody>
+                  
+                </table>
+                 <hr>
+                <%-- <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary text-center">Edite o medicamento</h6>
+                </div>
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th>Nome</th>
+                      <th>Posologia</th>
+                      <th>Substância Ativa</th>
+                      <th>Desde</th>
+                      
+                    </tr>
+                  </thead>
+               
+                  <tbody>
+                    <tr>
+                     
+                    <td> <div class="input-group">
+                      		
+                      		<input type="text" name="paciente.getMedicamento().observacoesMedicas" value="<c:out value="${paciente.getPlanoAtuacao().observacoesMedicas}" />" class="form-control" placeholder="<c:out value="${paciente.getPlanoAtuacao().observacoesMedicas}"/>"/>
+                     
+                       </div>
+                      		</td>
+                       
+                      <td> <div class="input-group">
+                      		
+                            <input name="paciente.historicoMedico" type="text" value="<c:out value="${paciente.getPlanoAtuacao().historicoMedico}" />" class="form-control" placeholder="<c:out value="${paciente.getPlanoAtuacao().historicoMedico}" />">
+                         
+                       </div>
+                       </td>
+                       
+                      <td><div class="input-group">
+                      		
+                      		<input name="paciente.alergias" type="text" value="<c:out value="${paciente.getPlanoAtuacao().alergias}" />" class="form-control" placeholder="<c:out value="${paciente.getPlanoAtuacao().alergias}" />">
                            
                          
                        </div>
@@ -288,7 +330,7 @@
                   
                 </table>
               </div>
-                  <button type="submit" class="btn btn-primary btn-icon-split btn-lg mt-3 mb-3">
+                --%>   <button type="submit" class="btn btn-primary btn-icon-split btn-lg mt-3 mb-3">
                     
                     <span class="icon text-white-50">
                       <i class="fas fa-check"></i>

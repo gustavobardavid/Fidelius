@@ -10,6 +10,7 @@ import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.dao.PacienteDAO;
 import br.com.caelum.vraptor.dao.PacienteTestDAO;
 import br.com.caelum.vraptor.model.Paciente;
+import br.com.caelum.vraptor.model.PlanoAtuacao;
 
 @Path("editarPaciente")
 @Controller
@@ -27,21 +28,16 @@ public class EditarPacienteController {
 	@Post
 	@Path("editarpaciente")
 	public void editarPaciente(Paciente paciente){
-		
 		//Carregar o paciente existente do banco de dados com base no ID
         Paciente pacienteExistente = null;
         pacienteExistente = daoTest.findById(paciente.getId());
-        
-		/*
-		 * // Atualizar apenas os campos desejados
-		 * pacienteExistente.setPreocupa(paciente.getPreocupa());
-		 * pacienteExistente.setObjetivo(paciente.getObjetivo());
-		 * pacienteExistente.setMedicamento(paciente.getMedicamento());
-		 * pacienteExistente.setPrioridade(paciente.getPrioridade());
-		 */
-        pacienteExistente.setAlcançado(paciente.isAlcançado());
+		 // Atualizar apenas os campos desejados
+		pacienteExistente.getPlanoAtuacao().setPreocupa(paciente.getPlanoAtuacao().getPreocupa());
+		pacienteExistente.getPlanoAtuacao().setObjetivo(paciente.getPlanoAtuacao().getObjetivo());
+		pacienteExistente.getPlanoAtuacao().setPrioridade(paciente.getPlanoAtuacao().getPrioridade());
+
 		//atualiza o model no banco
-		dao.insertOrUpdate(pacienteExistente);
+        dao.insertOrUpdate(pacienteExistente);
 		
 		result.redirectTo(SituaçãoController.class).situacao(paciente.getId());
 	}

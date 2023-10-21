@@ -263,6 +263,7 @@
                       <th>Nome</th>
                       <th>Posologia</th>
                       <th>Substância Ativa</th>
+                      <th>Desde</th>
                  
                     </tr>
                   </thead>
@@ -290,6 +291,14 @@
                         <div class="input-group">
                             	
                             <input name="medicamento.subsAtiva" type="text" class="form-control" placeholder="Substância Ativa">
+                        	
+                        	</div>
+                    		
+                       </td>
+                       <td>
+                        <div class="input-group">
+                            	
+                            <input name="medicamento.desde" type="text" class="form-control" placeholder="Desde">
                         	
                         	</div>
                     		

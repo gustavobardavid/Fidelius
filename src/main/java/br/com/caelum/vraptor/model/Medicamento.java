@@ -13,10 +13,21 @@ public class Medicamento extends Model{
 	
 	private String posologia;
 	
-	 // Definindo o relacionamento muitos para um com a entidade Paciente
-    @ManyToOne
-    @JoinColumn(name = "paciente_id")
-    private Paciente paciente;
+	private String desde;
+	
+	// Definindo o relacionamento muitos para um com a entidade Paciente
+	@ManyToOne
+	@JoinColumn(name = "paciente_id")
+	private Paciente paciente;
+	 
+	public String getDesde() {
+		return desde;
+	}
+
+	public void setDesde(String desde) {
+		this.desde = desde;
+	}
+
     
 	public Paciente getPaciente() {
 		return paciente;

@@ -34,7 +34,7 @@ public class Paciente extends Model {
 	
 	boolean alcançado = false;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "plano_id")
 	private PlanoAtuacao planoAtuacao;
 	

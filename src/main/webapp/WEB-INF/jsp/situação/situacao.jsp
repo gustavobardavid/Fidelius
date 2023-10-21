@@ -307,7 +307,14 @@
                   <tbody>
                     <tr>
                     
-                      <td><c:out value="${paciente.getUpdatedFormated()}" /></td>
+                      <td>
+                       <c:forEach var="medicamento" items="${paciente.getMedicamentos()}">
+        				<c:out value="${medicamento.getDesde()}" />
+        				<c:if test="${!empty medicamentoIndex && medicamentoIndex != fn:length(paciente.getMedicamentos()) - 1}">
+        				,
+        				</c:if>
+    					</c:forEach>
+                      </td>
                       
                     </tr>               
                   </tbody>
