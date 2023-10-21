@@ -1,6 +1,10 @@
 package br.com.caelum.vraptor.dao;
+import java.util.List;
+
 import javax.persistence.EntityManager;
+
 import br.com.caelum.vraptor.model.Model;
+import br.com.caelum.vraptor.model.Paciente;
 
 /**
  * Classe Generica que mantem metodos basicos de persistencia de objetos
@@ -81,7 +85,7 @@ public abstract class DAO <T extends Model> {
 		return model; //Sera retornado o registro encontrado, ou nulo, ou se tiver inativo estoura a exeption
 		
 	}
-	
+
 	/**
 	 * @param model
 	 * @return

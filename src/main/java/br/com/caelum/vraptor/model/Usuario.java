@@ -9,21 +9,14 @@ import javax.persistence.Id;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-public class Usuario {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+public class Usuario extends Model{
 	
+
 	@NotEmpty(message = "Nome não pode ser vazio")
 	private String nome;
 	@NotEmpty(message = "Senha não pode estar vazia")
 	private String senha;
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	
 	public String getNome() {
 		return nome;
 	}
