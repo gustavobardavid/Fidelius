@@ -1,8 +1,13 @@
 package br.com.caelum.vraptor.model;
 
+import java.util.ArrayList;
+import java.util.List;
 
-
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -17,8 +22,6 @@ public class Paciente extends Model {
 	private String comorbidade;
 	
 	private String dataNascimento;
-
-	private char Preocupa;
 	
 	private String endereco;
 	
@@ -26,22 +29,33 @@ public class Paciente extends Model {
 	
 	private String grupoSanguineo;
 	
-	private String alergias;
-	
-	private String historicoMedico;
-	
-	private String observacoesMedicas;
-	
-	private String responsavelLegal;
-	//plano de atuação
-	private String objetivo;
-	
-	private String prioridade;
-	
-	private String medicamento;
+	private String responsavelLegal; // em caso de menor de idade
 	
 	boolean alcançado = false;
-		
+	
+	@OneToOne
+	@JoinColumn(name = "plano_id")
+	private PlanoAtuacao planoAtuacao;
+	
+	// Anotando a coleção que representa o relacionamento um para muitos
+    @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL)
+    private List<Medicamento> medicamentos = new ArrayList<>();
+	
+	public PlanoAtuacao getPlanoAtuacao() {
+		return planoAtuacao;
+	}
+	public void setPlanoAtuacao(PlanoAtuacao planoAtuacao) {
+		this.planoAtuacao = planoAtuacao;
+	}
+	public List<Medicamento> getMedicamentos() {
+		return medicamentos;
+	}
+	public void setMedicamentos(ArrayList<Medicamento> medicamentos) {
+		this.medicamentos = medicamentos;
+	}
+	public void addMedicamento(Medicamento medicamento) {
+		this.medicamentos.add(medicamento);
+	}
 	public String getEndereco() {
 		return endereco;
 	}
@@ -60,50 +74,14 @@ public class Paciente extends Model {
 	public void setGrupoSanguineo(String grupoSanguineo) {
 		this.grupoSanguineo = grupoSanguineo;
 	}
-	public String getAlergias() {
-		return alergias;
-	}
-	public void setAlergias(String alergias) {
-		this.alergias = alergias;
-	}
-	public String getHistoricoMedico() {
-		return historicoMedico;
-	}
-	public void setHistoricoMedico(String historicoMedico) {
-		this.historicoMedico = historicoMedico;
-	}
-	public String getObservacoesMedicas() {
-		return observacoesMedicas;
-	}
-	public void setObservacoesMedicas(String observacoesMedicas) {
-		this.observacoesMedicas = observacoesMedicas;
-	}
+	
 	public String getResponsavelLegal() {
 		return responsavelLegal;
 	}
 	public void setResponsavelLegal(String responsavelLegal) {
 		this.responsavelLegal = responsavelLegal;
 	}
-	public String getMedicamento() {
-		return medicamento;
-	}
-	public void setMedicamento(String medicamento) {
-		this.medicamento = medicamento;
-	}
 	
-	public String getObjetivo() {
-		return objetivo;
-	}
-	public void setObjetivo(String objetivo) {
-		this.objetivo = objetivo;
-	}
-	
-	public String getPrioridade() {
-		return prioridade;
-	}
-	public void setPrioridade(String prioridade) {
-		this.prioridade = prioridade;
-	}
 	public boolean isAlcançado() {
 		return alcançado;
 	}
@@ -117,13 +95,7 @@ public class Paciente extends Model {
 	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-	
-	public char getPreocupa() {
-		return Preocupa;
-	}
-	public void setPreocupa(char preocupa) {
-		Preocupa = preocupa;
-	}
+
 	public String getNome() {
 		return nome;
 	}

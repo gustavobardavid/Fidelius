@@ -185,7 +185,6 @@
                        <hr>
                        <div class="input-group">
                        		<input name="paciente.dataNascimento" type="text" class="form-control" placeholder="Data de Nascimento">
-                            
                             <input name="paciente.endereco" type="text" class="form-control" placeholder="Endereço">
                             <input name="paciente.numeroTelefone" type="text" class="form-control" placeholder="*Telefone" required>	
                             </div>
@@ -199,11 +198,10 @@
                   <thead class="thead-dark">
                     <tr>
                     
-                      <th>Objetivos</th>
+                      <th>Objetivo</th>
                       <th>Prioridade</th>
                       <th>Preocupa?</th>
-                      <th>Medicamento</th>
-                    
+                 
                     </tr>
                   </thead>
                
@@ -213,7 +211,7 @@
                       <td> 
                       <div class="input-group">
                       
-                            <input name="paciente.objetivo" type="text" class="form-control" placeholder="Descrição">
+                            <input name="planoAtuacao.objetivo" type="text" class="form-control" placeholder="Descrição">
                          
                        </div>
                        </td>
@@ -221,7 +219,7 @@
                       <td>
                       <div class="input-group">
                       
-                            <input name="paciente.prioridade" type="Text" class="form-control" placeholder="Alta ou Baixa">
+                            <input name="planoAtuacao.prioridade" type="Text" class="form-control" placeholder="Alta ou Baixa">
                          
                        </div>
                        </td>
@@ -229,21 +227,13 @@
                        <td>
                         <div class="input-group">
                             	
-                            <input name="paciente.preocupa" type="text" class="form-control" placeholder="Preocupa?">
+                            <input name="planoAtuacao.preocupa" type="text" class="form-control" placeholder="Preocupa?">
                         	
                         	</div>
                     		<div class="text-xs font-weight-bold text-success text-uppercase mb-1">Preocupa: Pouco(P); Bastante(B)</div>
                      
                        </td>
-                       
-                        <td>
-                      <div class="input-group">
-                      
-                          <input name="paciente.medicamento" type="text" class="form-control" placeholder="Ex: Aerodini">
-                         
-                       </div>
-                       </td>
-                                
+                              
                   </tr>
                   </tbody>
                 </table>
@@ -254,12 +244,61 @@
                 <hr>
                   <div class="input-group">
                        
-                            <input name="paciente.observacoesMedicas" type="text" class="form-control" placeholder="Observações">	
-                            <input name="paciente.historicoMedico" type="text" class="form-control" placeholder="Histórico Médico">
-                            <input name="paciente.alergias" type="text" class="form-control" placeholder="Alergias">
+                            <input name="planoAtuacao.observacoesMedicas" type="text" class="form-control" placeholder="Observações">	
+                            <input name="planoAtuacao.historicoMedico" type="text" class="form-control" placeholder="Histórico Médico">
+                            <input name="planoAtuacao.alergias" type="text" class="form-control" placeholder="Alergias">
                             </div>
               </div>
                        <hr>
+                       
+                       <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary text-center">Medicamentos</h6>
+                </div>
+                   
+                           <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead class="thead-dark">
+                    <tr>
+                    
+                      <th>Nome</th>
+                      <th>Posologia</th>
+                      <th>Substância Ativa</th>
+                 
+                    </tr>
+                  </thead>
+               
+                  <tbody>
+                  <tr>
+              
+                      <td> 
+                      <div class="input-group">
+                      
+                            <input name="medicamento.nome" type="text" class="form-control" placeholder="Nome">
+                         
+                       </div>
+                       </td>
+                       
+                      <td>
+                      <div class="input-group">
+                      
+                            <input name="medicamento.posologia" type="Text" class="form-control" placeholder="Posologia">
+                         
+                       </div>
+                       </td>
+                       
+                       <td>
+                        <div class="input-group">
+                            	
+                            <input name="medicamento.subsAtiva" type="text" class="form-control" placeholder="Substância Ativa">
+                        	
+                        	</div>
+                    		
+                       </td>
+                              
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
                          
                   <button type="submit" class="btn btn-primary btn-icon-split btn-lg mt-3 mb-3">
                     
@@ -270,7 +309,6 @@
                     <span class="text">Salvar</span>
                    
                   </button>
-            
                   
                 </div>
               <span class="group-text">O símbolo * sinaliza um campo obrigatório</span>

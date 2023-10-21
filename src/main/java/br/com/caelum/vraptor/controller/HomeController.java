@@ -32,9 +32,9 @@ public class HomeController {
 			if(paciente.isAlcançado() == true) {
 				contadorAlcançado++;
 			}
-			if (paciente.getPreocupa() == 'B') {
-				contadorPreocupante++;
-			}
+			/*
+			 * if (paciente.getPreocupa() == 'B') { contadorPreocupante++; }
+			 */
 			contadorPacientes++;
 		}
 		

@@ -218,7 +218,7 @@
         					<td>${dado.nome}</td>
         					<td>${dado.comorbidade}</td>
         					<td>${dado.dataNascimento}</td>
-        					<td>${dado.prioridade}</td>
+        					<td>${dado.getPlanoAtuacao().prioridade}</td>
         					<td>${dado.alcançado}</td>
         					
         					 <td>

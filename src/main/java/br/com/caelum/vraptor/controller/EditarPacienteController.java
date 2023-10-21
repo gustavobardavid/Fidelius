@@ -32,11 +32,13 @@ public class EditarPacienteController {
         Paciente pacienteExistente = null;
         pacienteExistente = daoTest.findById(paciente.getId());
         
-        // Atualizar apenas os campos desejados
-        pacienteExistente.setPreocupa(paciente.getPreocupa());
-        pacienteExistente.setObjetivo(paciente.getObjetivo());
-        pacienteExistente.setMedicamento(paciente.getMedicamento());
-        pacienteExistente.setPrioridade(paciente.getPrioridade());
+		/*
+		 * // Atualizar apenas os campos desejados
+		 * pacienteExistente.setPreocupa(paciente.getPreocupa());
+		 * pacienteExistente.setObjetivo(paciente.getObjetivo());
+		 * pacienteExistente.setMedicamento(paciente.getMedicamento());
+		 * pacienteExistente.setPrioridade(paciente.getPrioridade());
+		 */
         pacienteExistente.setAlcançado(paciente.isAlcançado());
 		//atualiza o model no banco
 		dao.insertOrUpdate(pacienteExistente);
