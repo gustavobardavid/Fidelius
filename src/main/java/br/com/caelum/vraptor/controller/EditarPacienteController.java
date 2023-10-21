@@ -35,7 +35,11 @@ public class EditarPacienteController {
 		pacienteExistente.getPlanoAtuacao().setPreocupa(paciente.getPlanoAtuacao().getPreocupa());
 		pacienteExistente.getPlanoAtuacao().setObjetivo(paciente.getPlanoAtuacao().getObjetivo());
 		pacienteExistente.getPlanoAtuacao().setPrioridade(paciente.getPlanoAtuacao().getPrioridade());
-
+		pacienteExistente.getPlanoAtuacao().setObservacoesMedicas(paciente.getPlanoAtuacao().getObservacoesMedicas());
+		pacienteExistente.getPlanoAtuacao().setHistoricoMedico(paciente.getPlanoAtuacao().getHistoricoMedico());
+		pacienteExistente.getPlanoAtuacao().setAlergias(pacienteExistente.getPlanoAtuacao().getAlergias());
+		pacienteExistente.setGrupoSanguineo(paciente.getGrupoSanguineo());
+		
 		//atualiza o model no banco
         dao.insertOrUpdate(pacienteExistente);
 		

@@ -200,7 +200,7 @@
                        
                       <td> <div class="input-group">
                       		
-                            <input name="paciente.planoatuacao.objetivo" type="text" value="<c:out value="${paciente.getPlanoAtuacao().objetivo}" />" class="form-control" placeholder="<c:out value="${paciente.getPlanoAtuacao().objetivo}" />">
+                            <input type="text" name="paciente.planoAtuacao.objetivo" value="<c:out value="${paciente.getPlanoAtuacao().objetivo}" />" class="form-control" placeholder="<c:out value="${paciente.getPlanoAtuacao().objetivo}" />">
                          
                        </div>
                        </td>
@@ -208,7 +208,7 @@
                       <td>
                       <div class="input-group">
                       
-                            <input name="paciente.planoAtuacao.prioridade" type="Text" value="<c:out value="${paciente.getPlanoAtuacao().prioridade}" />" class="form-control" placeholder="<c:out value="${paciente.getPlanoAtuacao().prioridade}" />">
+                            <input type="text" name="paciente.planoAtuacao.prioridade" value="<c:out value="${paciente.getPlanoAtuacao().prioridade}" />" class="form-control" placeholder="<c:out value="${paciente.getPlanoAtuacao().prioridade}" />">
                          
                        </div>
                        </td>
@@ -216,7 +216,7 @@
                       <td>
                       <div class="input-group">
                       
-                          <input name="paciente.alcançado" type="text" value="<c:out value="${paciente.alcançado}" />" class="form-control" placeholder="<c:out value="${paciente.alcançado}" />">
+                          <input type="text" name="paciente.alcançado" value="<c:out value="${paciente.alcançado}" />" class="form-control" placeholder="<c:out value="${paciente.alcançado}" />">
                          
                        </div>
                        </td>
@@ -252,14 +252,14 @@
                        
                       <td> <div class="input-group">
                       		
-                            <input name="paciente.planoAtuacao.historicoMedico" type="text" value="<c:out value="${paciente.getPlanoAtuacao().historicoMedico}" />" class="form-control" placeholder="<c:out value="${paciente.getPlanoAtuacao().historicoMedico}" />">
+                            <input type="text" name="paciente.planoAtuacao.historicoMedico" value="<c:out value="${paciente.getPlanoAtuacao().historicoMedico}" />" class="form-control" placeholder="<c:out value="${paciente.getPlanoAtuacao().historicoMedico}" />">
                          
                        </div>
                        </td>
                        
                       <td><div class="input-group">
                       		
-                      		<input name="paciente.planoAtuacao.alergias" type="text" value="<c:out value="${paciente.getPlanoAtuacao().alergias}" />" class="form-control" placeholder="<c:out value="${paciente.getPlanoAtuacao().alergias}" />">
+                      		<input type="text" name="paciente.planoAtuacao.alergias"  value="<c:out value="${paciente.getPlanoAtuacao().alergias}" />" class="form-control" placeholder="<c:out value="${paciente.getPlanoAtuacao().alergias}" />">
                            
                          
                        </div>
@@ -268,7 +268,7 @@
                       <td>
                       <div class="input-group">
                       
-                            <input name="paciente.grupoSanguineo" type="Text" value="<c:out value="${paciente.grupoSanguineo}" />" class="form-control" placeholder="<c:out value="${paciente.grupoSanguineo}" />">
+                            <input type="text" name="paciente.grupoSanguineo" value="<c:out value="${paciente.grupoSanguineo}" />" class="form-control" placeholder="<c:out value="${paciente.grupoSanguineo}" />">
                          
                        </div>
                        </td>
