@@ -78,7 +78,18 @@
 
           <span>Pacientes</span></a>
       </li>
-
+ <li class="nav-item">
+                <a class="nav-link" href="<c:url value="exames"/>">
+                    <i class="fas fa-stethoscope"></i>
+                    <span>Exames</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<c:url value="medicamentos"/>">
+                    <i class="fas fa-capsules"></i>
+                    <span>Medicamentos</span>
+                </a>
+            </li>
 
   </ul>
   <!-- End of Sidebar -->
@@ -229,7 +240,18 @@
             <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-eye"></i>
             </button>
             </a>
-                  
+                  <a href="<c:url value='exame'>
+                <c:param name='id' value='${dado.id}'/>
+            </c:url>">
+            <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-stethoscope"></i>
+            </button>
+            </a>
+            <a href="<c:url value='medicamento'>
+                <c:param name='id' value='${dado.id}'/>
+            </c:url>">
+            <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-capsules"></i>
+            </button>
+            </a>
                       <a href="<c:url value='pacientes/deletarpaciente'>
                 <c:param name='id' value='${dado.id}'/>
             </c:url>">

@@ -75,7 +75,18 @@
 
           <span>Pacientes</span></a>
       </li>
-
+	 <li class="nav-item">
+                <a class="nav-link" href="<c:url value="exames"/>">
+                    <i class="fas fa-stethoscope"></i>
+                    <span>Exames</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<c:url value="medicamentos"/>">
+                    <i class="fas fa-capsules"></i>
+                    <span>Medicamentos</span>
+                </a>
+            </li>
     
     </ul>
     <!-- End of Sidebar -->

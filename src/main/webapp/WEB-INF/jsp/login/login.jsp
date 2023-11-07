@@ -45,7 +45,7 @@
                         </form>
                     </div>
                     <div class="card-footer">
-                        <p class="text-center"><a href="#">Esqueceu a senha?</a></p>
+                        <p class="text-center"><a href="<c:url value='cadastrarUsuario'/>">Cadastre-se</a></p>
                     </div>
                 </div>
             </div>

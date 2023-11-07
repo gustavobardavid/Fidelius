@@ -1,7 +1,9 @@
 package br.com.caelum.vraptor.model;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -12,7 +14,12 @@ import javax.persistence.OneToOne;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
 public class Paciente extends Model {
 	
 	//dados do paciente
@@ -38,76 +45,20 @@ public class Paciente extends Model {
 	@JoinColumn(name = "plano_id")
 	private PlanoAtuacao planoAtuacao;
 	
-	// Anotando a coleção que representa o relacionamento um para muitos
-    @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Medicamento> medicamentos = new ArrayList<>();
+	@OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private Set<Medicamento> medicamentos = new HashSet<>();
+
+	@OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private Set<Exame> exames = new HashSet<>();
 	
-	public PlanoAtuacao getPlanoAtuacao() {
-		return planoAtuacao;
-	}
-	public void setPlanoAtuacao(PlanoAtuacao planoAtuacao) {
-		this.planoAtuacao = planoAtuacao;
-	}
-	public List<Medicamento> getMedicamentos() {
-		return medicamentos;
-	}
-	public void setMedicamentos(ArrayList<Medicamento> medicamentos) {
-		this.medicamentos = medicamentos;
-	}
 	public void addMedicamento(Medicamento medicamento) {
 		this.medicamentos.add(medicamento);
 	}
-	public String getEndereco() {
-		return endereco;
+	public void addExame(Exame exame) {
+		this.exames.add(exame);
 	}
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
-	public String getNumeroTelefone() {
-		return numeroTelefone;
-	}
-	public void setNumeroTelefone(String numeroTelefone) {
-		this.numeroTelefone = numeroTelefone;
-	}
-	public String getGrupoSanguineo() {
-		return grupoSanguineo;
-	}
-	public void setGrupoSanguineo(String grupoSanguineo) {
-		this.grupoSanguineo = grupoSanguineo;
-	}
-	
-	public String getResponsavelLegal() {
-		return responsavelLegal;
-	}
-	public void setResponsavelLegal(String responsavelLegal) {
-		this.responsavelLegal = responsavelLegal;
-	}
-	
 	public boolean isAlcançado() {
 		return alcançado;
 	}
-	public void setAlcançado(boolean alcançado) {
-		this.alcançado = alcançado;
-	}
 
-	public String getDataNascimento() {
-		return dataNascimento;
-	}
-	public void setDataNascimento(String dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getComorbidade() {
-		return comorbidade;
-	}
-	public void setComorbidade(String comorbidade) {
-		this.comorbidade = comorbidade;
-	}
-	
 }

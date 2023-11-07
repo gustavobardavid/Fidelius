@@ -2,6 +2,8 @@ package br.com.caelum.vraptor.controller;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.inject.Inject;
 
@@ -49,7 +51,7 @@ public class CadastrarPacienteController {
 		//setando o plano ao paciente
 		paciente.setPlanoAtuacao(planoAtuacao);
 		//setando o arraylist
-		ArrayList<Medicamento> medicamentos = new ArrayList<Medicamento>();
+		Set<Medicamento> medicamentos = new HashSet<Medicamento>();
 		paciente.setMedicamentos(medicamentos);
 		//setando o paciente na classe medicamento
 		medicamento.setPaciente(paciente);
@@ -58,7 +60,7 @@ public class CadastrarPacienteController {
 		//salvar plano no banco
 		planoDAO.insertOrUpdate(planoAtuacao);
 		//salvar medicamento no banco
-		medDAO.insertOrUpdate(medicamento);
+		medDAO.save(medicamento);
 		//salvar paciente no banco
 	    pacienteDao.insertOrUpdate(paciente);
 		//direcionar para pacientes

@@ -82,7 +82,18 @@
 
           <span>Pacientes</span></a>
       </li>
-
+	 <li class="nav-item">
+                <a class="nav-link" href="<c:url value="exames"/>">
+                    <i class="fas fa-stethoscope"></i>
+                    <span>Exames</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<c:url value="medicamentos"/>">
+                    <i class="fas fa-capsules"></i>
+                    <span>Medicamentos</span>
+                </a>
+            </li>
     
     </ul>
     <!-- End of Sidebar -->
@@ -144,7 +155,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4 no-print">
+          <div class="d-sm-flex align-items-end justify-content-between mb-12 no-print">
             <h1 class="h3 mb-0 text-gray-800">Estado de Situação </h1>
             <button onclick="window.print(); ocultarBotaoEditar();" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Gerar Relatório</button>
           </div>
@@ -270,13 +281,13 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Medicamentos</div>
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Medicamento Atual</div>
                            <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead class="thead-dark" >
                     <tr>
                      
-                      <th>Quais?</th>
+                      <th>Qual?</th>
                     
                     </tr>
                   </thead>

@@ -148,8 +148,4 @@ public abstract class Model {
 	public void setMotivoInativacao(String motivoInativacao) {
 		this.motivoInativacao = motivoInativacao;
 	}
-	
-	
-	
-	
 }

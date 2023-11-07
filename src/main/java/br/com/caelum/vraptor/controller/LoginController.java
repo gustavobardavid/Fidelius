@@ -1,5 +1,7 @@
 package br.com.caelum.vraptor.controller;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.validation.Valid;
@@ -10,7 +12,9 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.dao.PacienteDAO;
+import br.com.caelum.vraptor.dao.PacienteTestDAO;
 import br.com.caelum.vraptor.dao.UsuarioDAO;
+import br.com.caelum.vraptor.model.Paciente;
 import br.com.caelum.vraptor.model.Usuario;
 import br.com.caelum.vraptor.validator.Validator;
 
@@ -22,36 +26,32 @@ public class LoginController {
 	@Inject Result result;
 	@Inject UsuarioDAO usuarioDao;
 	@Inject Validator validator;
+	@Inject UsuarioDAO daoUsuario;
+	@Inject PacienteDAO dao;
+	@Inject PacienteTestDAO daoTest;
 	
 	@Get("")
 	public void login() {
 			
 	}
+	
 	@Post("validausuario")
 	public void validarUsuario(Usuario usuario) {
-		//validar usuario e em caso de erro redireciona pra mesma pagina
-		
-		Usuario usuarioDoBanco = usuarioDao.selectPorNome(usuario);
-
-        if (usuarioDoBanco == null) {
-            // Usuário não encontrado no banco de dados
-            result.include("error", "Usuário não encontrado");
-            result.redirectTo(this).login();
-        } else if (!usuarioDoBanco.getSenha().equals(usuario.getSenha())) {
-            // Senha incorreta
-            result.include("error", "Senha incorreta");
-            result.redirectTo(this).login();
-        } else {
-            // Usuário válido
-            result.include("success", "Login bem-sucedido");
-          //direcionar para pacientes
-    		result.redirectTo(PacientesController.class).pacientes();
-        }
-
-     
-  
-		
-		
-		
+		List<Usuario> usuarios  = daoUsuario.findAll();
+		boolean nomeEncontrado = false;
+		Usuario usuarioEncontrado = null;
+		for (Usuario usuarioBanco : usuarios) {
+	        if (usuarioBanco.getNome().equals(usuario.getNome())) {
+	        	nomeEncontrado = true;
+		        usuarioEncontrado = usuarioBanco;
+	            break; // Sai do loop assim que encontrar um CPF correspondente
+	        }
+	    }
+		 if (nomeEncontrado) {
+			result.redirectTo(HomeController.class).home();
+		 } else {
+			   result.redirectTo(this).login();
+		 }
 	}
-}
+	}
+
